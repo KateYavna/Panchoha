@@ -9,10 +9,12 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import kotlinx.android.synthetic.main.fragment_order.*
 import ua.com.panchoha.R
+import ua.com.panchoha.db.CommentsCallBack
+import ua.com.panchoha.db.DBManager
 import ua.com.panchoha.main.MainActivityContract
 
 
-class OrderFragment : Fragment(), MainActivityContract.OrderFragmentView {
+class OrderFragment : Fragment(), MainActivityContract.OrderFragmentView, CommentsCallBack {
     var presenterOrder : MainActivityContract.Presenter? = null
 
     override fun setPresenter(presenter: MainActivityContract.Presenter) {
@@ -38,6 +40,10 @@ class OrderFragment : Fragment(), MainActivityContract.OrderFragmentView {
             etPhone.requestFocus()
             ibtNumber.visibility = View.INVISIBLE
             ibtPhone.visibility = View.VISIBLE }
+        ibtPhone.setOnClickListener {
+            var order :String = etPhone.toString() +", "+ etName.toString()+", "+ etSize.toString()+", "+etColor.toString()+", "+etNumber.toString()
+            DBManager(this).addOrder(order)
+        }
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -64,6 +70,10 @@ class OrderFragment : Fragment(), MainActivityContract.OrderFragmentView {
 
                 }
             }
+    }
+
+    override fun onAllComments(comments: ArrayList<String>) {
+
     }
 
 

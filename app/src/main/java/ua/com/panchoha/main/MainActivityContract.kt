@@ -42,6 +42,9 @@ class MainActivityContract {
     interface CommentsFragmentView{
         fun setPresenter(presenter: Presenter)
     }
+    interface DetailsFragmentView{
+        fun setPresenter(presenter: Presenter)
+    }
 
 
 
@@ -57,6 +60,9 @@ class MainActivityContract {
         fun showFashionFragment()
         fun showContactsFragment()
         fun showOrderFragment()
+        fun showCommentsFragment()
+        fun showDetailsFragment()
+
 
     }
 }

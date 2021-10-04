@@ -13,8 +13,10 @@ import ua.com.panchoha.Callback
 import ua.com.panchoha.R
 import ua.com.panchoha.adapters.ButtonsAdapter
 import ua.com.panchoha.data.DatasourceButton
+import ua.com.panchoha.db.CommentsCallBack
+import ua.com.panchoha.db.DBManager
 
-class MainActivity : AppCompatActivity(), MainActivityContract.MainView, Callback {
+class MainActivity : AppCompatActivity(), MainActivityContract.MainView, Callback, CommentsCallBack {
     val presenter = MainActivityPresenter(this)
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -26,6 +28,7 @@ class MainActivity : AppCompatActivity(), MainActivityContract.MainView, Callbac
         rvButtons.adapter = ButtonsAdapter(this,buttons,this)
         rvButtons.layoutManager = LinearLayoutManager (this, RecyclerView.HORIZONTAL,false)
 
+        DBManager(this).addComment("I like it")
     }
 
     override fun setFragment(fragment: Fragment) {
@@ -64,4 +67,9 @@ class MainActivity : AppCompatActivity(), MainActivityContract.MainView, Callbac
             setHelloInvisible()}
         else {presenter.showCommentsFragment()
             setHelloInvisible()}
-        }}
+        }
+
+    override fun onAllComments(comments: ArrayList<String>) {
+
+    }
+}

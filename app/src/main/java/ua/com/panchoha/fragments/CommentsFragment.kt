@@ -30,7 +30,8 @@ class CommentsFragment : Fragment(), MainActivityContract.CommentsFragmentView, 
         ibtSendComment.setOnClickListener {
             dbManager.addComment(etComment.text.toString())
             etComment.text.clear()}
-            dbManager.getAllComments()
+            onAllComments(dbManager.getAllComments())
+
 
     }
 

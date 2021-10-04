@@ -1,5 +1,6 @@
 package ua.com.panchoha.db
 
+import android.util.Log
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
@@ -29,11 +30,17 @@ class DBManager(val callBack: CommentsCallBack): ExternalDB {
             }
 
             override fun onCancelled(error: DatabaseError) {
-                TODO("Not yet implemented")
+                Log.d("MyLog", "error")
             }
 
         })
         return comments
+    }
+
+    override fun addOrder(order: String) {
+        val reference = database.getReference("db").child("orders")
+        val messageID = reference.push().key
+        if (messageID != null) reference.child(messageID).setValue(order)
     }
 }
 interface CommentsCallBack{

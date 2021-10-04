@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import kotlinx.android.synthetic.main.fragment_details.*
 import ua.com.panchoha.Callback
 import ua.com.panchoha.R
+import ua.com.panchoha.main.MainActivityContract
 import kotlin.Int.Companion
 
 
@@ -21,13 +22,14 @@ private const val ARG_PARAM4 = "price"
  * Use the [DetailsFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class DetailsFragment : Fragment() {
+class DetailsFragment : Fragment(), MainActivityContract.DetailsFragmentView {
 
     private var photo: Int? = null
     private var headline: Int? = null
     private var details: Int? = null
     private var price: Int? = null
 
+    var presenterDetails : MainActivityContract.Presenter? = null
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -54,6 +56,9 @@ class DetailsFragment : Fragment() {
         tvHeadlineDetails.text = headline?.let { context?.resources?.getString(it) }
         tvDetailsDetails.text = details?.let {context?.resources?.getString(it)}
         tvPriceDetails.text = price?.let { context?.resources?.getString(it) }
+        btOrder.setOnClickListener {
+           presenterDetails?.showOrderFragment()
+        }
     }
 
 
@@ -78,6 +83,11 @@ class DetailsFragment : Fragment() {
                     putInt(ARG_PARAM4, price)
                 }
             }
+    }
+
+    override fun setPresenter(presenter: MainActivityContract.Presenter) {
+        this.presenterDetails = presenter
+
     }
 
 

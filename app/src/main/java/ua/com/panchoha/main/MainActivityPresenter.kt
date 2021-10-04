@@ -1,5 +1,6 @@
 package ua.com.panchoha.main
 
+import android.telecom.Call
 import ua.com.panchoha.fragments.*
 import ua.com.panchoha.main.MainActivityContract
 
@@ -66,6 +67,11 @@ class MainActivityPresenter(val mainView: MainActivityContract.MainView): MainAc
     }
     override fun showCommentsFragment() {
         val fragment = CommentsFragment.newInstance()
+        mainView.setFragment(fragment)
+        fragment.setPresenter(this)
+    }
+    override fun showDetailsFragment() {
+        val fragment = DetailsFragment.newInstance(1,2,3,4)
         mainView.setFragment(fragment)
         fragment.setPresenter(this)
     }
