@@ -15,7 +15,8 @@ class DatasourceButton() {
             Button(R.string.btThin),
             Button(R.string.btFashion),
             Button(R.string.btLocation),
-            Button(R.string.btOrder)
+            Button(R.string.btOrder),
+            Button(R.string.btComments)
 
 
         )

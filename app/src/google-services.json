@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "288415293605",
+    "project_id": "panchoha-24a8d",
+    "storage_bucket": "panchoha-24a8d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:288415293605:android:e8f277b90cbdd302ca6d4c",
+        "android_client_info": {
+          "package_name": "ua.com.panchoha"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "288415293605-nnsop3m5n2m8qidap3iok671ve4ppp5d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC5wRIT8Nr6LM3ZYxkC88Opp9WPyzpoYEE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "288415293605-nnsop3m5n2m8qidap3iok671ve4ppp5d.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

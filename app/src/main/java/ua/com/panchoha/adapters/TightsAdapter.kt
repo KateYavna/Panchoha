@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.item_button.view.*
+import kotlinx.android.synthetic.main.item_comment.view.*
 import kotlinx.android.synthetic.main.item_goods.view.*
 import kotlinx.android.synthetic.main.item_socks.view.*
 import ua.com.panchoha.data.Tights
@@ -48,6 +49,7 @@ class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
         var clMain = itemView.clMain
         var clMainSocks = itemView.clMainSocks
         var button = itemView.btButton
+        var comment = itemView.tvItemComment
 }
 interface Callback {
     fun onItemSelected(index:Int)

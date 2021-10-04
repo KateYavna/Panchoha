@@ -10,8 +10,7 @@ import ua.com.panchoha.Callback
 import ua.com.panchoha.R
 import kotlin.Int.Companion
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
+
 private const val ARG_PARAM1 = "photo"
 private const val ARG_PARAM2 = "headline"
 private const val ARG_PARAM3 = "details"
@@ -23,7 +22,7 @@ private const val ARG_PARAM4 = "price"
  * create an instance of this fragment.
  */
 class DetailsFragment : Fragment() {
-    // TODO: Rename and change types of parameters
+
     private var photo: Int? = null
     private var headline: Int? = null
     private var details: Int? = null

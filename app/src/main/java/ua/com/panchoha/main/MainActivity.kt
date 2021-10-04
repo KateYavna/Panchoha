@@ -1,15 +1,14 @@
 package ua.com.panchoha.main
 
-import android.content.Intent
-import android.net.Uri
+
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.firebase.database.FirebaseDatabase
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.fragment_order.*
 import ua.com.panchoha.Callback
 import ua.com.panchoha.R
 import ua.com.panchoha.adapters.ButtonsAdapter
@@ -26,7 +25,6 @@ class MainActivity : AppCompatActivity(), MainActivityContract.MainView, Callbac
 
         rvButtons.adapter = ButtonsAdapter(this,buttons,this)
         rvButtons.layoutManager = LinearLayoutManager (this, RecyclerView.HORIZONTAL,false)
-
 
     }
 
@@ -62,6 +60,8 @@ class MainActivity : AppCompatActivity(), MainActivityContract.MainView, Callbac
             setHelloInvisible()}
         else if (index == 9){presenter.showContactsFragment()
             setHelloInvisible()}
-        else {presenter.showOrderFragment()
+        else if (index == 10){presenter.showOrderFragment()
+            setHelloInvisible()}
+        else {presenter.showCommentsFragment()
             setHelloInvisible()}
         }}

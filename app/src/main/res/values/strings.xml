@@ -11,7 +11,10 @@
     <string name="btThin">Тоненькі</string>
     <string name="btLocation">Контакти</string>
     <string name="btOrder">Замовити</string>
+    <string name="btComments">Коментарі</string>
     <string name="tvHello">В І Т А Є М О</string>
+    <string name="tvComments">К О М Е Н Т А Р І</string>
+    <string name="etComments">Коментуй тут</string>
     <string name="etName">назва товару</string>
     <string name="etSize">розмір</string>
     <string name="etColor">колір</string>

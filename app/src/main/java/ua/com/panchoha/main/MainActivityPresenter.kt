@@ -64,4 +64,9 @@ class MainActivityPresenter(val mainView: MainActivityContract.MainView): MainAc
         mainView.setFragment(fragment)
         fragment.setPresenter(this)
     }
+    override fun showCommentsFragment() {
+        val fragment = CommentsFragment.newInstance()
+        mainView.setFragment(fragment)
+        fragment.setPresenter(this)
+    }
 }

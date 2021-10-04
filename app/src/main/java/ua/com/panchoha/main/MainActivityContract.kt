@@ -39,6 +39,9 @@ class MainActivityContract {
     interface OrderFragmentView{
         fun setPresenter(presenter: Presenter)
     }
+    interface CommentsFragmentView{
+        fun setPresenter(presenter: Presenter)
+    }
 
 
 
